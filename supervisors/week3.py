@@ -9,7 +9,7 @@
 from supervisors.quickbot import QuickBotSupervisor
 from simobject import Path
 from supervisor import Supervisor
-from math import sqrt, sin, cos, atan2
+from math import sqrt, sin, cos, atan2, copysign
 from pose import Pose
 
 class QBGTGSupervisor(QuickBotSupervisor):
@@ -72,14 +72,69 @@ class QBGTGSupervisor(QuickBotSupervisor):
 
             
     def ensure_w(self,v_lr):
-      
-        v_l, v_r = v_lr
-        
+
         #Week 3 Assignment Code:
                 
         #End Week 3 Assigment
-        
-        return v_l, v_r
+        # This code is taken directly from Sim.I.Am week 4
+        # I'm sure one can do better.
+
+        v_max = self.robot.wheels.max_velocity
+        v_min = self.robot.wheels.min_velocity
+
+        R = self.robot.wheels.radius
+        L = self.robot.wheels.base_length
+
+        def diff2uni(vl, vr):
+            return (vl + vr) * R / 2, (vr - vl) * R / L
+
+        v, w = diff2uni(*v_lr)
+
+        if v == 0:
+
+            # Robot is stationary, so we can either not rotate, or
+            # rotate with some minimum/maximum angular velocity
+
+            w_min = R / L * (2 * v_min);
+            w_max = R / L * (2 * v_max);
+
+            if abs(w) > w_min:
+                w = copysign(max(min(abs(w), w_max), w_min), w)
+            else:
+                w = 0
+
+            return self.uni2diff((0, w))
+
+        else:
+            # 1. Limit v,w to be possible in the range [vel_min, vel_max]
+            # (avoid stalling or exceeding motor limits)
+            v_lim = max(min(abs(v), (R / 2) * (2 * v_max)), (R / 2) * (2 * v_min))
+            w_lim = max(min(abs(w), (R / L) * (v_max - v_min)), 0)
+
+            # 2. Compute the desired curvature of the robot's motion
+
+            vl, vr = self.uni2diff((v_lim, w_lim))
+
+            # 3. Find the max and min vel_r/vel_l
+            v_lr_max = max(vl, vr);
+            v_lr_min = min(vl, vr);
+
+            # 4. Shift vr and vl if they exceed max/min vel
+            if (v_lr_max > v_max):
+                vr -= v_lr_max - v_max
+                vl -= v_lr_max - v_max
+            elif (v_lr_min < v_min):
+                vr += v_min - v_lr_min
+                vl += v_min - v_lr_min
+
+            # 5. Fix signs (Always either both positive or negative)
+            v_shift, w_shift = diff2uni(vl, vr)
+
+            v = copysign(v_shift, v)
+            w = copysign(w_shift, w)
+
+            return self.uni2diff((v, w))
+        #return v_l, v_r
 
     def execute(self, robot_info, dt):
         """Inherit default supervisor procedures and return unicycle model output (vl,vr)"""
@@ -87,5 +142,6 @@ class QBGTGSupervisor(QuickBotSupervisor):
             output = Supervisor.execute(self, robot_info, dt)
             #print(output)
             return self.ensure_w(self.uni2diff(output))
+            #return output
         else:
             return 0,0

@@ -55,7 +55,7 @@ class SimulationWidget(SimUI, QtGui.QMainWindow):
         QtGui.QMainWindow.__init__(self,parent)
         self.setWindowTitle("QtSimiam")
         self.setWindowIcon(QtGui.QIcon("./res/image/appicon.png"))
-        self.resize(700,700)
+        self.resize(1000,1000)
         
         self.create_actions()
         self.create_toolbars()

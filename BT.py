@@ -5,7 +5,8 @@
 # Taken from: https://people.csail.mit.edu/albert/bluez-intro/x232.html
 # Taken from: https://people.csail.mit.edu/albert/bluez-intro/c212.html
 
-import bluetooth, subprocess
+import bluetooth
+import time
 from time import sleep
 
 def receiveMessages():
@@ -28,13 +29,17 @@ def sendMessageTo(targetBluetoothMacAddress):
   port = 1
   sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
   sock.connect((targetBluetoothMacAddress, port))
-  sock.send("hello!!")
+  #sock.send("Z  \n")
+  sock.send("Z")
+  sock.send('\x18')
+  sock.send('\x18')
+  sock.send('\n')
   sock.close()
   
 def lookUpNearbyBluetoothDevices():
   nearby_devices = bluetooth.discover_devices()
   for bdaddr in nearby_devices:
-    print str(bluetooth.lookup_name( bdaddr )) + " [" + str(bdaddr) + "]"
+    print (str(bluetooth.lookup_name( bdaddr )) + " [" + str(bdaddr) + "]")
     
     
 if __name__ == "__main__":
@@ -45,19 +50,32 @@ if __name__ == "__main__":
     port = 1         # RFCOMM port
     # Now, connect in the same way as always with PyBlueZ
     try:
-        s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        sendMessageTo(addr)
+        time.sleep(0.01)
+        #receiveMessages()
+        """print('envie')
+        server_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        server_socket.bind(("", 3))
+        server_socket.listen(1)
+
+        client_socket, address = server_socket.accept()
+
+        data = client_socket.recv(1024)
+
+        print
+        "received [%s]" % data
+
+        server_socket.close()"""
+        """s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        s.bind((addr,port))
         s.connect((addr,port))
+        sleep(1)
         #s.send('C')
-        s.send('W')
-        s.send('C')
-        sleep(3)
-        s.send('S')
-        sleep(1)
-        s.send('W')
-        s.send('C')
-        sleep(1)
-        s.send('S')
-        s.close()
+        s.send(str(chr(0xA5)))
+        s.send(' ')
+        s.send(' ')
+        s.send('\n')
+        #s.close()"""
     except bluetooth.btcommon.BluetoothError as err:
         print(err)
         # Error handler

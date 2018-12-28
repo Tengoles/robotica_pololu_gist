@@ -85,7 +85,8 @@ class GoToGoal(Controller):
         # save errors
         self.e_k_1 = e_k
         self.E_k = e_I
-        #print('control en execute de week3:')
-        #pprint([v_, w_])
         #Capaz aca se puede poner la comunicacion por BT (control de motores)
+        #print("inputs en week3:")
+        #pprint([v_, w_])
         return [v_, w_]
+        #return [1, 1]

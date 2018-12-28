@@ -9,12 +9,12 @@ from xmlreader import XMLReader
 import helpers
 import math
 import sys
-
+import time
 import pose
 import simobject
 import supervisor
 from quadtree import QuadTree, Rect
-
+import bluetooth
 from pprint import pprint
 
 PAUSE = 0
@@ -46,7 +46,13 @@ class Simulator(threading.Thread):
         """Create a simulator with *renderer* and *in_queue*
         """
         super(Simulator, self).__init__()
-
+        print("Estableciendo conexion BT")
+        addr = "20:15:11:02:89:17"  # Device Address
+        port = 1  # RFCOMM port
+        BT = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        BT.connect((addr, port))
+        sleep(1)
+        self.BTcon = BT
         #Attributes
         self.__stop = False
         self.__state = PAUSE
@@ -211,6 +217,45 @@ class Simulator(threading.Thread):
         self.__supervisor_param_cache = [sv.get_parameters() for sv in self.__supervisors ]
         self.__construct_world()
 
+    def mandar_velocidades(self, BT, inputs):
+        def sign(x):
+            return (1 - (x<=0))
+
+        if (sign(inputs[0]) == 1) and (sign(inputs[1]) == 1):
+            hexa = '\x55'
+
+        if (sign(inputs[0]) == 0) and (sign(inputs[1]) == 0):
+            hexa = '\xaa'
+
+        if (sign(inputs[0]) == 0) and (sign(inputs[1]) == 1):
+            hexa = '\x5a'
+
+        if (sign(inputs[0]) == 1) and (sign(inputs[1]) == 0):
+            hexa = '\xa5'
+        rpml = abs(inputs[0])*(60/(2*math.pi))
+        rpmr = abs(inputs[1])*(60/(2*math.pi))
+        if inputs[0] == 0:
+            vl_new = 0
+        else:
+            #vl_new = chr(int(round(((25*abs(inputs[0] - 160))*2*math.pi)/(60*11))))
+            vl_new = (11*rpml + 160)/25
+        if inputs[1] == 0:
+            vr_new = 0
+        else:
+            #vr_new = chr(int(round(((25*abs(inputs[1] - 160))*2*math.pi)/(60*11))))
+            vr_new = (11 * rpmr + 160) / 25
+        print(str(inputs[0]))
+        print(str(inputs[1]))
+        BT.send(hexa)
+        BT.send(chr(int(round(vl_new))))
+        BT.send(chr(int(round(vr_new))))
+        BT.send('\n')
+        #print('vl_new:' + str((int(round(((25*abs(inputs[0] - 160))*2*math.pi)/(60*11))))))
+        #print('vr_new:' + str((int(round(((25*abs(inputs[1] - 160))*2*math.pi)/(60*11))))))
+        print('vl_new:' + str(int(round(vl_new))))
+        print('vr_new:' + str(int(round(vr_new))))
+        return vl_new,vr_new
+
     def run(self):
         """Start the thread. In the beginning there's no world, no obstacles
            and no robots.
@@ -220,27 +265,26 @@ class Simulator(threading.Thread):
         """
         self.log('starting simulator thread')
 
-        time_constant = 0.02 # 20 milliseconds
+        time_constant = 0.01 # 20 milliseconds
         
         self.__renderer.clear_screen() #create a white screen
         self.__update_view()
-
+        primera_vuelta = True
         while not self.__stop:
-
+            #print("__time:")
+            #print(self.__time)
             try:
-
-                sleep(time_constant/self.__time_multiplier)
+                #sleep(time_constant/self.__time_multiplier)
 
                 self.__process_queue()
-
                 if self.__state == RUN or \
                    self.__state == RUN_ONCE:
 
                     self.__time += time_constant
-
                     # First, move robots
                     for i, robot in enumerate(self.__robots):
                         robot.move(time_constant)
+                        #robot.move(time.time() - self.__time)
                         self.__trackers[i].add_point(robot.get_pose())
 
                     self.fwd_logqueue()
@@ -254,11 +298,20 @@ class Simulator(threading.Thread):
 
                     # Now calculate supervisor outputs for the new position
                     for i, supervisor in enumerate(self.__supervisors):
-                        """ACA ESTA EL PUTO QUE LLAMA A LAS FUNCIONES... O NO"""
+                        """ACA ESTA EL PUTO QUE LLAMA A LAS FUNCIONES"""
                         info = self.__robots[i].get_info()  #de aca saca el estado del robot (x,y,theta,v,etc)
-                                                            #hay que ver como hacer para reciba esto por BT y se pasen al mismo formato
 
-                        inputs = supervisor.execute(info, time_constant)  #el execute es el calculo de error y la accion de control
+                        inputs = supervisor.execute(info, time_constant)  #el execute es el calculo de error y la accion de control.
+                                                                        #Ya devuelve el resultado de uni2diff
+                        #print("inputs en simulator:")
+                        #pprint(inputs)
+                        if primera_vuelta == True:
+                            primera_vuelta = False
+                        else:
+                            #print("MANDO VELOCIDADES")
+                            #print(" ")
+                            self.mandar_velocidades(self.BTcon, inputs)
+                        #self.BTcon.send("Z  \n")
                         self.__robots[i].set_inputs(inputs)
                         self.fwd_logqueue()
 
@@ -270,7 +323,7 @@ class Simulator(threading.Thread):
                 # the supervisor would draw the previous state.
                 if self.__state != PAUSE:
                     self.__draw()
-                    
+
                 if self.__state == DRAW_ONCE or \
                    self.__state == RUN_ONCE:
                     self.pause_simulation()

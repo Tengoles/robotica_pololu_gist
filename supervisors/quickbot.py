@@ -48,12 +48,12 @@ class QuickBotSupervisor(Supervisor):
         """Sets the default PID parameters, goal, and velocity"""
         p = Struct()
         p.goal = Struct()
-        p.goal.x = 1.0
-        p.goal.y = 1.0
+        p.goal.x = 0.50
+        p.goal.y = 0.0
         p.velocity = Struct()
         p.velocity.v = 0.2
         p.gains = Struct()
-        p.gains.kp = 10.0
+        p.gains.kp = 3.0
         p.gains.ki = 2.0
         p.gains.kd = 0.0
         
@@ -134,6 +134,7 @@ class QuickBotSupervisor(Supervisor):
     def execute(self, robot_info, dt):
         """Inherit default supervisor procedures and return unicycle model output (x, y, theta)"""
         output = Supervisor.execute(self, robot_info, dt)
+        #return (0,0)
         return self.uni2diff(output)
 
     def draw_background(self, renderer):

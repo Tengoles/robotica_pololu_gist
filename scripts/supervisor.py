@@ -213,7 +213,12 @@ class Supervisor:
 
         #execute the current controller
         #en el primer parametro de execute tendriamos que pasar las coordenadas del bicho sacadas de la realimentacion
-        return self.current.execute(self.get_controller_state(),dt)
+        output = self.current.execute(self.get_controller_state(),dt)
+        #print("inputs en supervisor.execute:")
+        #from pprint import pprint
+        #pprint(output)
+        #return self.current.execute(self.get_controller_state(),dt)
+        return output
 
     def draw_background(self, renderer):
         """Draw anything in the view before anything else is drawn (except the grid)

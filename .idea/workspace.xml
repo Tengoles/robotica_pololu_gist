@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="720d4b96-f209-4786-820d-bd91fc52867e" name="Default Changelist" comment="" />
+    <list default="true" id="720d4b96-f209-4786-820d-bd91fc52867e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BT.py" beforeDir="false" afterPath="$PROJECT_DIR$/BT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/week3.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/week3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/qt_mainwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/qt_mainwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qtsimiam_week3.py" beforeDir="false" afterPath="$PROJECT_DIR$/qtsimiam_week3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots/quickbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots/quickbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/supervisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/supervisor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervisors/quickbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/supervisors/quickbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervisors/week3.py" beforeDir="false" afterPath="$PROJECT_DIR$/supervisors/week3.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,16 +87,66 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-843950197">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="3227" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="3227" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/week3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+            <state relative-caret-position="19">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/simulator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-227">
+              <caret line="264" column="11" lean-forward="true" selection-start-line="264" selection-start-column="11" selection-end-line="264" selection-end-column="11" />
               <folding>
-                <element signature="e#213#246#0" expanded="true" />
+                <marker date="1546036805768" expanded="true" signature="8485:9040" ph="..." />
+                <marker date="1546036805768" expanded="true" signature="9823:9858" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supervisors/week3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+              <folding>
+                <element signature="e#213#264#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/supervisors/quickbot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+            <state relative-caret-position="-1127">
+              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
               <folding>
                 <element signature="e#213#246#0" expanded="true" />
               </folding>
@@ -103,19 +165,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/simulator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="261" column="47" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qtsimiam_week3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state>
+              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
               <folding>
                 <element signature="e#156#193#0" expanded="true" />
               </folding>
@@ -126,8 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/supervisor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1844">
-              <caret line="207" column="23" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="23" />
+            <state relative-caret-position="279">
+              <caret line="218" column="9" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -135,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robots/quickbot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+            <state relative-caret-position="222">
+              <caret line="154" column="46" lean-forward="true" selection-start-line="154" selection-start-column="46" selection-end-line="154" selection-end-column="46" />
               <folding>
                 <element signature="e#208#226#0" expanded="true" />
               </folding>
@@ -147,10 +200,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+            <state relative-caret-position="589">
+              <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
               <folding>
-                <element signature="e#215#243#0" expanded="true" />
+                <element signature="e#215#237#0" expanded="true" />
+                <marker date="1546025188297" expanded="true" signature="944:947" ph="..." />
               </folding>
             </state>
           </provider>
@@ -160,52 +214,56 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>__time_multipl</find>
-      <find>robot_info</find>
-      <find>get_info</find>
-      <find>def execute(</find>
-      <find>gotogoal</find>
-      <find>QuickBotSupervisor</find>
-      <find>def get_info</find>
-      <find>print(</find>
-      <find>get_</find>
-      <find>get_controller_state(</find>
-      <find>self.info</find>
-      <find>print</find>
+      <find>info.wheels.ticks_per_rev</find>
+      <find>def ensure</find>
+      <find>__robot</find>
+      <find>wheels.left_ticks</find>
+      <find>time_cons</find>
+      <find>supervisor</find>
+      <find>pose</find>
+      <find>get_controller_state</find>
       <find>parameters</find>
-      <find>current</find>
-      <find>self.current</find>
-      <find>.</find>
-      <find>Supervisor.current</find>
-      <find>QBGTGSupervisor</find>
-      <find>vl</find>
-      <find>self.current =</find>
-      <find>starting sim</find>
-      <find>.move(</find>
-      <find>pprint</find>
-      <find>robot</find>
-      <find>ang_velo</find>
+      <find>Supervisor</find>
+      <find>sleep</find>
+      <find>supervisor_type</find>
+      <find>supervisor =</find>
+      <find>.uni2diff(</find>
+      <find>estimate_pose</find>
+      <find>run(</find>
+      <find>execute</find>
+      <find>def move(</find>
+      <find>uni2diff</find>
+      <find>ensure_w</find>
+      <find>def uni2diff</find>
+      <find>wheels.max</find>
+      <find>__time</find>
+      <find>stop(</find>
+      <find>wheels.max_velocity =</find>
+      <find>ensure</find>
       <find>execute(</find>
-      <find>move</find>
-      <find>print(ou</find>
-      <find>exec</find>
-      <find>state</find>
+      <find>goal</find>
+      <find>ticks</find>
+      <find>run</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\enzot\Documents\robotica_pololu_pysimiam</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/worlds/week3.xml" />
+        <option value="$PROJECT_DIR$/qtsimiam_week3.py" />
+        <option value="$PROJECT_DIR$/scripts/supervisor.py" />
+        <option value="$PROJECT_DIR$/controllers/week3.py" />
         <option value="$PROJECT_DIR$/BT.py" />
         <option value="$PROJECT_DIR$/supervisors/quickbot.py" />
+        <option value="$PROJECT_DIR$/supervisors/week3.py" />
         <option value="$PROJECT_DIR$/scripts/simulator.py" />
         <option value="$PROJECT_DIR$/robots/quickbot.py" />
-        <option value="$PROJECT_DIR$/controllers/week3.py" />
-        <option value="$PROJECT_DIR$/scripts/supervisor.py" />
-        <option value="$PROJECT_DIR$/qtsimiam_week3.py" />
       </list>
     </option>
   </component>
@@ -218,36 +276,36 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1100" />
+    <option name="width" value="1939" />
+    <option name="height" value="1099" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="robotica_pololu_pysimiam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="robotica_pololu_pysimiam" type="462c0819:PsiDirectoryNode" />
+              <item name="robotica_pololu_gist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="robotica_pololu_gist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="robotica_pololu_pysimiam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="robotica_pololu_pysimiam" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="robotica_pololu_gist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="robotica_pololu_gist" type="462c0819:PsiDirectoryNode" />
+              <item name="supervisors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pysimiam-coursera-week4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -280,7 +338,7 @@
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13655463" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.13865547" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,7 +349,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -340,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/supervisors/week3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="66" column="34" lean-forward="true" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -368,66 +419,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/supervisors/quickbot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding>
-            <element signature="e#213#246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/week3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-          <folding>
-            <element signature="e#213#246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+        <state relative-caret-position="589">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding>
-            <element signature="e#215#243#0" expanded="true" />
+            <element signature="e#215#237#0" expanded="true" />
+            <marker date="1546025188297" expanded="true" signature="944:947" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/simulator.py">
+    <entry file="file://$PROJECT_DIR$/supervisors/week3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="261" column="47" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robots/quickbot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+        <state relative-caret-position="165">
+          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
           <folding>
-            <element signature="e#208#226#0" expanded="true" />
+            <element signature="e#213#264#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/supervisor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1844">
-          <caret line="207" column="23" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="23" />
+        <state relative-caret-position="279">
+          <caret line="218" column="9" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qtsimiam_week3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
           <folding>
             <element signature="e#156#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supervisors/quickbot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1127">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="e#213#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robots/quickbot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="154" column="46" lean-forward="true" selection-start-line="154" selection-start-column="46" selection-end-line="154" selection-end-column="46" />
+          <folding>
+            <element signature="e#208#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/week3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-227">
+          <caret line="264" column="11" lean-forward="true" selection-start-line="264" selection-start-column="11" selection-end-line="264" selection-end-column="11" />
+          <folding>
+            <marker date="1546036805768" expanded="true" signature="8485:9040" ph="..." />
+            <marker date="1546036805768" expanded="true" signature="9823:9858" ph="..." />
           </folding>
         </state>
       </provider>

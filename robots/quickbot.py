@@ -150,14 +150,15 @@ class QuickBot(Robot):
         self.info = Struct()
         self.info.wheels = Struct()
         # these were the original parameters
-        self.info.wheels.radius = 0.0325
-        self.info.wheels.base_length = 0.09925
-        self.info.wheels.ticks_per_rev = 16.0
+        self.info.wheels.radius = 0.0127
+        self.info.wheels.base_length = 0.085
+        self.info.wheels.ticks_per_rev = 256.0
         self.info.wheels.left_ticks = 0
         self.info.wheels.right_ticks = 0
         
-        self.info.wheels.max_velocity = 8.377
-        
+        self.info.wheels.max_velocity = 2*pi*565/60
+        self.info.wheels.min_velocity = 2*pi*40/60
+
         self.left_revolutions = 0.0
         self.right_revolutions = 0.0
         
